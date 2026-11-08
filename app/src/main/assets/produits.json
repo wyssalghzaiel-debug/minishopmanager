@@ -1,0 +1,46 @@
+{
+  "produits": [
+    {
+      "id": 1,
+      "nom": "Téléphone Portable",
+      "description": "Smartphone 5G OLED 128Go",
+      "prix": 1200.0,
+      "image": "img_phone"
+    },
+    {
+      "id": 2,
+      "nom": "Casque Bluetooth",
+      "description": "Réduction de bruit active",
+      "prix": 250.0,
+      "image": "img_headphone"
+    },
+    {
+      "id": 3,
+      "nom": "Montre Connectée",
+      "description": "Suivi sportif & rythme cardiaque",
+      "prix": 450.0,
+      "image": "img_watch"
+    },
+    {
+      "id": 4,
+      "nom": "Chargeur USB Fast",
+      "description": "Charge rapide 65W GaN",
+      "prix": 60.0,
+      "image": "img_charger"
+    },
+    {
+      "id": 5,
+      "nom": "Accessoires High-Tech",
+      "description": "Hub USB-C & câbles tressés",
+      "prix": 85.0,
+      "image": "im_cable"
+    },
+    {
+      "id": 6,
+      "nom": "Support Voiture MagSafe",
+      "description": "Support magnétique & charge sans fil",
+      "prix": 75.0,
+      "image": "img_support"
+    }
+  ]
+}
