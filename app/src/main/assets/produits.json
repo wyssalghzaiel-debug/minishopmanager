@@ -1,46 +1,66 @@
+
 {
+  "categories": [
+    "Tous",
+    "Smartphones",
+    "Audio",
+    "Montres",
+    "Accessoires"
+  ],
   "produits": [
     {
       "id": 1,
       "nom": "Téléphone Portable",
-      "description": "Smartphone 5G OLED 128Go",
+      "categorie": "Smartphones",
+      "description": "Smartphone 5G OLED 128Go avec processeur octacœur, écran AMOLED 120Hz et triple capteur photo HD.",
       "prix": 1200.0,
-      "image": "img_phone"
+      "image": "img_phone",
+      "rating": 4.8
     },
     {
       "id": 2,
       "nom": "Casque Bluetooth",
-      "description": "Réduction de bruit active",
+      "categorie": "Audio",
+      "description": "Casque Bluetooth avec réduction de bruit active premium, autonomie de 30 heures et coussinets ergonomiques en mémoire de forme.",
       "prix": 250.0,
-      "image": "img_headphone"
+      "image": "img_headphone",
+      "rating": 4.5
     },
     {
       "id": 3,
       "nom": "Montre Connectée",
-      "description": "Suivi sportif & rythme cardiaque",
+      "categorie": "Montres",
+      "description": "Montre connectée avec suivi sportif complet, capteur de rythme cardiaque, SpO2, étanchéité 50 m et GPS intégré.",
       "prix": 450.0,
-      "image": "img_watch"
+      "image": "img_watch",
+      "rating": 4.7
     },
     {
       "id": 4,
       "nom": "Chargeur USB Fast",
-      "description": "Charge rapide 65W GaN",
+      "categorie": "Accessoires",
+      "description": "Chargeur ultra rapide 65W GaN multi-ports, compact et compatible avec les ordinateurs et smartphones.",
       "prix": 60.0,
-      "image": "img_charger"
+      "image": "img_charger",
+      "rating": 4.9
     },
     {
       "id": 5,
       "nom": "Accessoires High-Tech",
-      "description": "Hub USB-C & câbles tressés",
+      "categorie": "Accessoires",
+      "description": "Hub USB-C 7-en-1 en aluminium anodisé avec câbles tressés renforcés en nylon.",
       "prix": 85.0,
-      "image": "im_cable"
+      "image": "im_cable",
+      "rating": 4.3
     },
     {
       "id": 6,
       "nom": "Support Voiture MagSafe",
-      "description": "Support magnétique & charge sans fil",
+      "categorie": "Accessoires",
+      "description": "Support magnétique puissant pour grille d'aération avec recharge sans fil rapide 15W.",
       "prix": 75.0,
-      "image": "img_support"
+      "image": "img_support",
+      "rating": 4.6
     }
   ]
 }

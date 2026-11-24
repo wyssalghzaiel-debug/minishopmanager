@@ -1,3 +1,4 @@
+
 package com.example.minishop_manager
 
 import android.content.Context
@@ -16,11 +17,21 @@ class ProductAdapter(
 ) : BaseAdapter() {
 
     override fun getCount(): Int = products.size
-    override fun getItem(position: Int): Any = products[position]
-    override fun getItemId(position: Int): Long = products[position].id.toLong()
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_product, parent, false)
+    override fun getItem(position: Int): Product = products[position]
+
+    override fun getItemId(position: Int): Long =
+        products[position].id.toLong()
+
+    override fun getView(
+        position: Int,
+        convertView: View?,
+        parent: ViewGroup?
+    ): View {
+
+        val view = convertView ?: LayoutInflater.from(context)
+            .inflate(R.layout.item_product, parent, false)
+
         val product = products[position]
 
         val imgProduct = view.findViewById<ImageView>(R.id.imgProduct)
@@ -33,12 +44,19 @@ class ProductAdapter(
         tvDesc.text = product.description
         tvPrice.text = String.format("%.2f TND", product.prix)
 
-        val resId = context.resources.getIdentifier(product.imageName, "drawable", context.packageName)
-        if (resId != 0) {
-            imgProduct.setImageResource(resId)
+        val imageId = context.resources.getIdentifier(
+            product.imageName,
+            "drawable",
+            context.packageName
+        )
+
+        if (imageId != 0) {
+            imgProduct.setImageResource(imageId)
         } else {
             imgProduct.setImageResource(R.drawable.logo_shop)
         }
+
+        imgProduct.contentDescription = product.nom
 
         btnAdd.setOnClickListener {
             onItemBuyClick(product)

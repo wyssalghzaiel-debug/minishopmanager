@@ -1,3 +1,4 @@
+
 package com.example.minishop_manager
 
 import android.content.Intent
@@ -17,37 +18,39 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        prefs = getSharedPreferences("MiniShopPrefs", MODE_PRIVATE)
+
         val etUsername = findViewById<EditText>(R.id.etUsername)
         val cbRememberMe = findViewById<CheckBox>(R.id.cbRememberMe)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
-        prefs = getSharedPreferences("MiniShopPrefs", MODE_PRIVATE)
-
-        val savedUser = prefs.getString("USERNAME", "")
-        val isRemembered = prefs.getBoolean("REMEMBER", false)
-
-        etUsername.setText(savedUser)
-        cbRememberMe.isChecked = isRemembered
+        etUsername.setText(prefs.getString("USERNAME", ""))
+        cbRememberMe.isChecked = prefs.getBoolean("REMEMBER", false)
 
         btnLogin.setOnClickListener {
-            val user = etUsername.text.toString().trim()
+            val username = etUsername.text.toString().trim()
 
-            if (user.isEmpty()) {
-                Toast.makeText(this, "Veuillez entrer votre nom", Toast.LENGTH_SHORT).show()
+            if (username.isEmpty()) {
+                etUsername.error = "Veuillez saisir votre nom"
                 return@setOnClickListener
             }
 
-            val editor = prefs.edit()
-            if (cbRememberMe.isChecked) {
-                editor.putString("USERNAME", user)
-                editor.putBoolean("REMEMBER", true)
-            } else {
-                editor.clear()
+            prefs.edit().apply {
+                if (cbRememberMe.isChecked) {
+                    putString("USERNAME", username)
+                    putBoolean("REMEMBER", true)
+                } else {
+                    remove("USERNAME")
+                    putBoolean("REMEMBER", false)
+                }
+
+                putString("CURRENT_USER", username)
+                putBoolean("IS_LOGGED_IN", true)
+                apply()
             }
-            editor.apply()
 
             val intent = Intent(this, CatalogActivity::class.java)
-            intent.putExtra("USER_NAME", user)
+            intent.putExtra("USER_NAME", username)
             startActivity(intent)
             finish()
         }

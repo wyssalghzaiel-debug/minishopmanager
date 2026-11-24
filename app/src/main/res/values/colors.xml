@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_dark">#1E1E2C</color>
-    <color name="primary_surface">#2D2D44</color>
-    <color name="accent_emerald">#00C853</color>
+    <color name="olive_primary">#C76B91</color>
+    <color name="olive_accent">#E7A6BE</color>
+    <color name="olive_light">#FCEEF3</color>
+    <color name="olive_dark">#783D59</color>
+
+    <color name="primary_dark">#783D59</color>
+    <color name="accent_emerald">#E7A6BE</color>
+
+    <color name="background_light">#FFF7FA</color>
+    <color name="bg_white">#FFFFFF</color>
+
     <color name="text_white">#FFFFFF</color>
-    <color name="text_secondary">#A0A0B0</color>
-    <color name="background_light">#F4F6F9</color>
-    <color name="card_background">#FFFFFF</color>
+    <color name="text_dark">#382632</color>
+    <color name="text_secondary">#8A7882</color>
+
+    <color name="pink_border">#F1D6E1</color>
+    <color name="pink_soft">#F9E2EB</color>
 </resources>
+
